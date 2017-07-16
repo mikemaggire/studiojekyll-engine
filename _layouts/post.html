@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{% assign defaultcomments = true %}
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  {% include post-header.html %}
+
+  <hr >
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+  <hr>
+
+  <!-- Pager -->
+  <div class="pager">
+      {% if page.previous.url %}
+      <span class="previous">
+          <a href="{{ site.baseurl }}{{ page.previous.url }}">&larr; Article précédent</a>
+      </span>
+      {% endif %}
+      {% if page.next.url %}
+      <span class="next">
+          <a href="{{ site.baseurl }}{{ page.next.url }}">Article suivant &rarr;</a>
+      </span>
+      {% endif %}
+      {% if page.previous.url or page.next.url %}
+          <hr>
+      {% endif %}
+  </div>
+
+  {% include disqus_comments.html %}
+
+</article>

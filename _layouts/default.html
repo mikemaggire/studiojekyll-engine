@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+  {% include head.html %}
+
+  <body class="theme-base-color">
+
+      <nav class="sidebar-nav">
+
+    <!-- index -->
+    <a class="sidebar-nav-item{% if page.url == '' or page.url == '/index.html' or page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Accueil</a>
+
+    <!-- blog -->
+    {% if site.showbloginnavbar %}
+    <a class="sidebar-nav-item{% if page.url contains '/blog/' %} active{% endif %}" href="{{ site.baseurl }}/blog/index.html">Blog</a>
+    {% endif %}
+
+    <!-- pages -->
+    {%- assign pages_list = site.pages | sort:"navbarindex" -%}
+    {%- for node in pages_list -%}
+      {%- if node.navbar != null -%}
+      <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" 
+         href="{{ site.baseurl }}{{ node.url }}">{{ node.navbar }}</a>
+      {%- endif -%}
+    {%- endfor -%}
+  </nav>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="{{ site.baseurl }}/index.html" title="Accueil">{{ site.title }}</a>
+            <small>{{ site.tagline }}</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    <!-- analytics -->
+    {%- include google-analytics.html -%}
+
+  </body>
+</html>

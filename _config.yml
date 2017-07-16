@@ -1,0 +1,129 @@
+# Bienvenue dans StudioJekyll 
+#
+# Ce fichier de configuration est utilisé pour définir les paramètres qui 
+# affectent tout votre site / blog. Ces valeurs n'ont pas vocation à être
+# modifiées souvent.
+
+########################
+# Configuration initiale
+########################
+# C'est ici que vous définissez les paramètres initiaux de vore nouveau site. 
+# Sivous regardez dans vos fichiers HTML, vous verrez qu'ils y accedent
+# via {{ site.title }}, {{ site.email }}, et ainsi de suite.
+
+title: Le titre de votre site
+tagline: Votre tagline
+description: 
+
+copyright:
+  name: Votre copyright
+  url: https://votre-domaine.com/auteur-copyright.html
+  licence: Libre de droits sous license MIT
+
+author:
+  name: Votre pseudo
+  url: https://twitter.com/mikemaggire
+
+# id utilisés pour faire apparaitre les boutons réseaux sociaux sur le site
+email: votre-email@example.com
+twitter_userid: mikemaggire
+github_userid:  mikemaggire
+#gplus_userid: +mikemaggire
+#facebook_userid: mikemaggire
+#linkedin_userid: mikemaggire
+
+############################################################ URL SITE
+# A noter que l'URL de votre site publié doit être configurer dans le fichier 
+# de configuration des publication, _config_test.yml et _config_prod.yml qui
+# se trouvent dans le repertoire _studiojekyll
+
+############################################################ VERSION
+# NOTA : Le numéro de version V:x.y.z du site est géré automatiquement 
+# au moment du deploiement en test et en prod
+# Le numéro z est incrémenté à chaque build de l'environnement de test
+# Le numéro y est incrémenté à chaque build de l'environnement de prod
+# Pour incrémenter le numéro de version majeur (x), utilisez la commande
+# 'npm version major' en ouvrant une console au niveau du repertoire racine de votre sire
+
+############################################################ COMMENTAIRES
+# Pour activer DISQUS à la fin des articles 
+# renseignez votre identifiant DISQUS (voir https://disqus.com/) 
+# en face de la variable 'shortname' ci-après.
+# Plus d'explications : http://wiki.maggire.net/blogging-studio-jekyll/2017/06/25/comment-activer-commentaires.html
+# Pour désactiver DISQUS, mettez les deux lignes suivantes en commentaire
+# disqus:
+#  shortname: blogging-studio-jekyll
+
+############################################################ ANALYTICS
+# Pour activer Google Analytics sur vos pages
+# Sinon mettez cette ligne en commentaire
+# google_analytics: UA-99999999-9
+
+############################################################ DESIGN CUSTOMIZATION
+
+# Défini si la bar denavigation doit inclure un lien vers /blog/index.html
+# Utile si la page principale de votre site n'affiche pas le blog
+showbloginnavbar: false
+
+# nombre maximum d'articles sur la page de blog
+paginate: 7
+
+############################################################
+# Les variables suivantes ne sont pas à modifier
+############################################################
+
+# encoding & format
+# se référer à http://shopify.github.io/liquid/filters/date/ pour personnaliser le format de date
+encoding: utf-8
+lang: fr
+date_format: "%d/%m/%Y"
+timezone: Europe/Paris
+markdown: kramdown
+paginate_path: "/blog/pages/page:num"
+
+# le format type des permalink
+permalink: :categories/blog/:title.html
+
+# Extension utilisées
+plugins:
+ - jekyll-feed
+ - jekyll-sitemap
+ - jekyll-paginate
+ - jemoji
+
+# Nous forcons le traitement de .htaccess
+include: 
+  - .htaccess
+
+# transpiler saas
+sass:
+  sass_dir: _sass
+
+# Exclusions spécifiques à VS
+# Ces fichiers ne seront pas générés dans le repertoire de destination _site ou _site2deploy
+exclude: 
+ - TODO.md
+ - README.md
+ - package.json
+ - bs-config.json
+ - deploy2prod.bat
+ - deploy2test.bat
+ - Gemfile
+ - Gemfile.lock
+ - node_modules
+
+# Traitement du repertoire _pages
+collections:
+  pages:
+    output: true
+    permalink: /:categories/:title.html
+
+kramdown:
+#  auto_ids:       true
+#  entity_output:  as_char
+#  toc_levels:     1..6
+#  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+#  input:          GFM
+#  hard_wrap:      false
+#  footnote_nr:    1
+  parse_block_html: true

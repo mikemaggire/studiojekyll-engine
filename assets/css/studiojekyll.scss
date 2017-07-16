@@ -1,0 +1,20 @@
+---
+# used by jekyll sass transpiler
+---
+
+@import "_newcolors.scss";
+
+// Choisissez la couleur de votre site
+$themecolor: $color-black;
+
+@import "_messages.scss";
+@import "_syntax-highlighting.scss";
+
+// choississez une texture pour le fond
+// https://www.toptal.com/designers/subtlepatterns/
+// ajoutez l'image dans le repertoire 'assets/img'
+// puis indiquez le nom de l'image ici.
+// Si vous ne voulez pas de texture de fond, mettez en commentaire la ligne suivante
+// $backgroundtexture: '{{ site.baseurl }}/assets/img/crossword.png';
+
+@import "_studiojekyll.scss";
