@@ -6,7 +6,7 @@
 # Vous devez configurer ces valeurs
 ########################
 url: http://nestor
-baseurl: /acceptance/studiojekyll-minimax
+baseurl: /acceptance/studiojekyll-starter
  
 
 ########################

@@ -6,7 +6,7 @@
 # Vous devez configurer ces valeurs
 ########################
 url: http://wiki.maggire.net
-baseurl: /studiojekyll-minimax
+baseurl: /studiojekyll-starter
 
 ########################
 # Les variables suivantes ne sont pas à modifier
