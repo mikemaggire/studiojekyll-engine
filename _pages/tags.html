@@ -2,7 +2,6 @@
 layout: page
 permalink: /tags.html
 title: Tags
-sidebar: Tags
 ---
 
 <div id="archives">
@@ -10,15 +9,14 @@ sidebar: Tags
   <div class="archive-group">
     {% capture tag_name %}{{ tag | first }}{% endcapture %}
     <div id="#{{ tag_name | slugize }}"></div>
-    <p></p>
+    <h3><span class="badge badge-default">{{ tag_name }}</span></h3>
     
-    <h3 class="tag-head">{{ tag_name }}</h3>
-    <a name="{{ tag_name | slugize }}"></a>
     {% for post in site.tags[tag_name] %}
-    <article class="archive-item">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-    </article>
+      <article class="archive-item">
+        <h5><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h5>
+      </article>
     {% endfor %}
   </div>
+  <hr>
 {% endfor %}
 </div>

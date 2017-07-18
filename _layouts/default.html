@@ -3,48 +3,61 @@
 
   {% include head.html %}
 
-  <body class="theme-base-color">
+  <body>
 
-      <nav class="sidebar-nav">
+    <!-- navbar : use navbar-inverse or navbar-light-->
+    <nav class="navbar navbar-toggleable-sm navbar-light fixed-top">
 
-    <!-- index -->
-    <a class="sidebar-nav-item{% if page.url == '' or page.url == '/index.html' or page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Accueil</a>
+      <!-- toggle button -->
+      <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- blog -->
-    {% if site.showbloginnavbar %}
-    <a class="sidebar-nav-item{% if page.url contains '/blog/' %} active{% endif %}" href="{{ site.baseurl }}/blog/index.html">Blog</a>
-    {% endif %}
+      <!-- brand logo and name -->
+      <a class="navbar-brand" href="{{ site.baseurl }}/">
+        <!--img src="{{ site.baseurl }}/brand.png" height="30" width="30" alt=""-->
+        {{ site.brand }}
+      </a>
 
-    <!-- pages -->
-    {%- assign pages_list = site.pages | sort:"navbarindex" -%}
-    {%- for node in pages_list -%}
-      {%- if node.navbar != null -%}
-      <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" 
-         href="{{ site.baseurl }}{{ node.url }}">{{ node.navbar }}</a>
-      {%- endif -%}
-    {%- endfor -%}
-  </nav>
+      <div class="navbar-collapse collapse" id="mynavbar" aria-expanded="false" role="navigation">
+        <ul class="navbar-nav mr-auto">
 
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="{{ site.baseurl }}/index.html" title="Accueil">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
-          </h3>
-        </div>
+          <!-- index -->
+          <li class="nav-item {% if page.url == '' or page.url == '/index.html' or page.url == '/' %} active{% endif %}">
+            <a class="nav-link" href="{{ site.baseurl }}/">Accueil</a>
+          </li>
+
+          <!-- blog -->
+          {% if site.showbloginnavbar %}
+          <li class="nav-item {% if page.url contains '/blog/' %} active{% endif %}">
+            <a class="nav-link" href="{{ site.baseurl }}{{ site.showbloginnavbar }}">Blog</a>
+          </li>
+          {% endif %}
+
+          <!-- pages with 'navbar:' defined in yaml front matter, order by 'navbarindex:' -->
+          {%- assign pages_list = site.pages | sort:"navbarindex" -%}
+          {%- for node in pages_list -%}
+            {%- if node.navbar != null -%}
+            <li class="nav-item {% if page.url == node.url %} active{% endif %}">
+              <a class="nav-link" href="{{ site.baseurl }}{{ node.url }}">{{ node.navbar }}</a>
+            </li>
+            {%- endif -%}
+          {%- endfor -%}
+
+        </ul>
       </div>
+    </nav>
 
-      <div class="container content">
-        {{ content }}
-      </div>
-    </div>
+    <!-- overall content -->
+    {{ content }}
 
+    <!-- footer -->
     {% include footer.html %}
 
-    <!-- analytics -->
+    <!-- scripts : jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     {%- include google-analytics.html -%}
 
   </body>

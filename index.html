@@ -2,5 +2,17 @@
 # Si vous souhaitez que la page d'acceuil de votre site soit le blog,
 # alors remplacez simplement le message d'accueil ou supprimez le.
 # Sinon remplacez ci-après 'bloglayout' par 'page'
-layout: bloglayout
+layout: default
 ---
+
+<!-- site title -->
+<header class="page-header">
+    <div class="container">
+        <h1 class="page-title">{{ site.title }}</h1>
+        <p class="lead">{{ site.tagline }}</p>
+    </div>
+</header>
+
+<div class="container">
+    {% include blogposts.html %}
+</div>

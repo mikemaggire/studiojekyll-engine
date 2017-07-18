@@ -5,327 +5,14 @@
  * https://github.com/.
  */
 
-/*
- * Contents
- *
- * Global resets
- * container
- * post & pages
- * images
- * social buttons
- * emoji
- */
-
- /*
- * Global resets
- *
- * Update the foundational and global aspects of the page.
- */
-
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-/* Prevent scroll on narrow devices */
-html,
-body {
-  overflow-x: hidden;
-}
-
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-}
-@media (min-width: 38em) {
-  html {
-    font-size: 20px;
-  }
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-  color: #515151;
-  background-color: #fff;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-}
-
-/* No `:visited` state is required by default (browsers will use `a`) */
-a {
-  color: #268bd2;
-  text-decoration: none;
-}
-a strong {
-  color: inherit;
-}
-/* `:focus` is linked to `:hover` for basic accessibility */
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
-  line-height: 1.25;
-  font-weight: 900;
-  color: #313131;
-  letter-spacing: -.025rem;
-  text-rendering: optimizeLegibility;
-}
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-}
-h3 {
-  margin-top: 1.5rem;
-  font-size: 1.25rem;
-}
-h4, h5, h6 {
-  margin-top: 1rem;
-  font-size: 1rem;
-}
-
-/* Body text */
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-strong {
-  color: #303030;
-}
-
-/* Lists */
-ul, ol, dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-bottom: .5rem;
-}
-
-/* Misc */
-hr {
-  position: relative;
-  margin: 1.5rem 0;
-  border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff;
-}
-
-abbr {
-  font-size: 85%;
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase;
-}
-abbr[title] {
-  cursor: help;
-  border-bottom: 1px dotted #e5e5e5;
-}
-
-/* Code */
-code,
-pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
-}
-code {
-  padding: .25em .5em;
-  font-size: 85%;
-  color: #bf616a;
-  background-color: #f9f9f9;
-  border-radius: 3px;
-}
-pre {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  font-size: .8rem;
-  line-height: 1.4;
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
-  background-color: #f9f9f9;
-}
-pre code {
-  padding: 0;
-  font-size: 100%;
-  color: inherit;
-  background-color: transparent;
-}
-
-/* Pygments via Jekyll */
-.highlight {
-  margin-bottom: 1rem;
-  border-radius: 4px;
-}
-.highlight pre {
-  margin-bottom: 0;
-}
-
-/* Gist via GitHub Pages */
-.gist .gist-file {
-  font-family: Menlo, Monaco, "Courier New", monospace !important;
-}
-.gist .markdown-body {
-  padding: 15px;
-}
-.gist pre {
-  padding: 0;
-  background-color: transparent;
-}
-.gist .gist-file .gist-data {
-  font-size: .8rem !important;
-  line-height: 1.4;
-}
-.gist code {
-  padding: 0;
-  color: inherit;
-  background-color: transparent;
-  border-radius: 0;
-}
-
-/* Quotes */
-blockquote {
-  padding: .5rem 1rem;
-  margin: .8rem 0;
-  color: #7a7a7a;
-  border-left: .25rem solid #e5e5e5;
-}
-blockquote p:last-child {
-  margin-bottom: 0;
-}
-@media (min-width: 30em) {
-  blockquote {
-    padding-right: 5rem;
-    padding-left: 1.25rem;
-  }
-}
-
-/* Tables */
-table {
-  margin-bottom: 1rem;
-  width: 100%;
-  border: 1px solid #e5e5e5;
-  border-collapse: collapse;
-}
-td,
-th {
-  padding: .25rem .5rem;
-  border: 1px solid #e5e5e5;
-}
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
-}
-
-/*
- * Container
- *
- * Center the page content.
- */
-
-.container {
-  max-width: 28rem;
-  padding-left:  1rem;
-  padding-right: 1rem;
-  margin-left:  auto;
-  margin-right: auto;
-}
-@media (min-width: 38em) {
-  .container {
-    max-width: 32rem;
-  }
-}
-@media (min-width: 56em) {
-  .container {
-    max-width: 38rem;
-  }
-}
-
-/*
- * Wrapper
- *
- * The wrapper is used to position site content when the sidebar is toggled. We
- * use an outter wrap to position the sidebar without interferring with the
- * regular page content.
- */
-
-.wrap {
-  position: relative;
-  width: 100%;
-}
-
-/*
- * Masthead
- *
- * Super small header above the content for site name and short description.
- */
-
-.masthead {
-  padding-top:    1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid #eee;
-}
-.masthead-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #505050;
-}
-.masthead-title a {
-  color: #505050;
-}
-.masthead-title small {
-  font-size: 75%;
-  font-weight: 400;
-  color: #c0c0c0;
-  letter-spacing: 0;
-}
-
-@media (max-width: 48em) {
-  .masthead-title {
-    text-align: center;
-  }
-  .masthead-title small {
-    display: none;
-  }
-}
-
-
-/*
- * Posts and pages
- *
- * Each post is wrapped in `.post` and is used on default and post layouts. Each
- * page is wrapped in `.page` and is only used on the page layout.
- */
-
-.page,
-.post {
-  margin-bottom: 4em;
-}
-
-/* Blog post or page title */
-.page-title,
-.post-title,
-.post-title a {
-  color: #303030;
-}
-.page-title,
-.post-title {
-  margin-top: 0;
+  padding-top: 3rem;
+  margin-bottom: 160px; /* Margin bottom by footer height */
 }
 
 /* texture fond */
@@ -336,51 +23,166 @@ tbody tr:nth-child(odd) th {
   }
 }
 
-.masthead {
-  background-color: white;
+.navbar {
+  background-color: $primarycolor;
+  background-image:linear-gradient($primarycolor, lighten($primarycolor, 30%));
+  background-image:-moz-linear-gradient($primarycolor, lighten($primarycolor, 30%));
+  background-image:-webkit-linear-gradient($primarycolor, lighten($primarycolor, 30%));
+  background-image:-o-linear-gradient($primarycolor, lighten($primarycolor, 30%));
+
+  a:hover { 
+    font-weight: bolder; }
 }
 
-/* images */
-img {
-  display: block;
-  max-width: 100%;
-  margin: auto;
-  border-width: 1px;
-  border-color: #7a7a7a;
-  border-style: solid;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px #7a7a7a;
+a {
+  color: $secondarycolor; 
 }
+
+a:hover, a:focus {
+  color: $primarycolor; 
+}
+
+/*
+ * Blog name and description
+ */
+
+.page-header {
+  padding-top: 2rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+  border-bottom: .05rem solid silver;
+  background-color: white;
+}
+.page-title {
+  margin-bottom: 0;
+  font-size: 2rem;
+}
+
+@media (min-width: 40em) {
+  .page-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* 
+ * posts & pagination
+ */
+
+.post-preview {
+  a {
+    text-decoration: none; }
+
+  .page-title {
+    font-size: 170%;}
+
+  .page-subtitle {
+    padding-bottom: 0.5rem;
+    font-size: 100%; }
+
+  .page-meta {
+    font-size: 0.7rem;
+    color: grey;
+    a { 
+      color:grey;
+      font-weight: bold;
+    }
+    .badge a {
+      color:white; } 
+  }
+}
+
+.post {
+  a {
+    text-decoration: none; }
+
+  .page-subtitle {
+    padding-top: 1rem;
+    padding-bottom: 0.7rem;
+    font-size: 130%; }
+
+  .page-meta {
+    font-size: 0.7rem;
+    color: grey;
+    a { 
+      color:grey;
+      font-weight: bold; }
+    }
+
+  .page-tags {
+    padding-bottom: 1rem;
+    .badge a {
+      color:white; } 
+  }
+}
+
+.badge a {
+  color:white; } 
+
+.blog-pagination {
+  padding-bottom: 1rem;
+  .btn {
+    border-radius: 2rem;
+  }
+}
+
+/*
+ * jekyll button
+ */
+.btn-outline-jekyll {
+    border-color: $primarycolor;
+    color: $secondarycolor;
+    background-color: white;
+}
+
+.btn-outline-jekyll:hover {
+      color:white;
+      background-color: $secondarycolor;
+}
+
+/*
+ * footer
+ */
+
+.pagefooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 1rem;
+  height: 150px; /* Set the fixed height of the footer here */
+  background-color: #f5f5f5;
+  color: #999;
+
+  a {
+    color: #555;
+  }
+}
+
 
 /* social button */
 .socialbutton {
-  display: inline;
+  padding: 0.5rem 0 0.5rem 0;
   margin: 0 0;
-  border-radius: 0px;
-  border-style: none;
-  border-radius: 0px;
-  box-shadow: none;   
-}
 
-.fa {
-  padding: 6px;
-  font-size: 19px;
-  width: 28px;
-  text-align: center;
-  text-decoration: none;
-  margin: 1px 2px;
-  border-radius: 50%;
+  .fa {
+    text-decoration: none;
+    padding: 6px;
+    text-align: center;
+    margin: 0 5px 0 0;
+    border-radius: 50%;
+    border-style: none;
+    box-shadow: none;   
 
-  background: #3B5998;
-  color: white;
+    background: $primarycolor;
+  }
 
-  border-style: none;
-  box-shadow: none;   
+  .fa::before {
+    color: white;
+  }
 
-}
-
-.fa:hover {
+  .fa:hover {
     opacity: 0.7;
+    text-decoration: none; 
+  }
 }
 
 /* emoji */
@@ -393,115 +195,87 @@ img {
   box-shadow: none;
 }
 
-/*
- * Custom type
- *
- * Extend paragraphs with `.lead` for larger introductory text.
- */
-
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
-}
-
-/*
- * Post preview
- *
- */
-
-.post-preview > a:hover,
-.post-preview > a:focus {
-  text-decoration: none;
-}
-.post-preview > a > .post-title {
-  font-size: 30px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-.post-preview > a > .post-subtitle {
-  margin: 0;
-  font-weight: 300;
-  margin-bottom: 10px;
-  color: #404040;
-}
-
-.post-preview h2
-{
-  font-weight: bold;
-}
-
-.post-preview > a:hover > .post-title
-{
-  color: $themecolor;
-}
-
-.post-meta {
-/*  display: inline;*/
-  margin-top: -.5rem;
-  margin-bottom: 2rem;
-  color: #9a9a9a;
+/* blockquote  */
+blockquote {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid $color-silver;
   font-style: italic;
-  font-size: 75%;
-}
 
-.post-meta a,
-.post-meta > a,
-.post-header .post-meta a,
-.post-preview > .post-meta > a,
-.post-preview > .post-meta > .tagline > a
-{
-  text-decoration: none;
-  color: #404040;
-}
+  .fa {
+    font-size: 2em;
+    color: silver;
+  }
 
-/*
- *
- * pagination
- *
-*/
-
-.pager .next > a,
-.pager .next > span {
-  float: right;
-}
-.pager .previous > a,
-.pager .previous > span {
-  float: left;
-}
-
-.pager {
-  margin: 20px 0 0;
-}
-.pager > a,
-.pager > span {
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  padding: 10px 5px;
-  background-color: white;
-  border-radius: 0;
-}
-@media only screen and (min-width: 768px) {
-  .pager > a,
-  .pager > span {
-    font-size: 14px;
-    padding: 15px 25px;
+  .blockquote-footer {
+    margin-top: 1rem;
   }
 }
-.pager > a:hover,
-.pager > a:focus {
-  color: white;
-  background-color: $themecolor;
-  border: 1px solid $themecolor;
-}
-.pager .disabled > a,
-.pager .disabled > a:hover,
-.pager .disabled > a:focus,
-.pager .disabled > span {
-  color: #808080;
-  background-color: #404040;
-  cursor: not-allowed;
+
+/*
+ * code
+ */
+
+.samp, .samp > div > .highlight {
+  color: whitesmoke;
+  background-color: darkslategrey;
+  font-family: Courier, monospace;
+  width: 100%;
+  padding: 5px;
+  margin: 0 0 1rem 0;
+  p, pre {
+    margin: 0px;
+  }
+  code {
+    color: whitesmoke;
+  }
 }
 
+kbd {
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $primarycolor;
+}
+
+/*
+ * images
+ */
+img {
+  /* default is like img-fluid in bootstrap4 */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.img-shadow {
+  margin: auto;
+  border-width: 1px;
+  border-color: #7a7a7a;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #7a7a7a;
+}
+
+/*
+ * table
+ */
+
+$table-border-width: 2px;
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: white;
+  border-bottom: $table-border-width solid $primarycolor;
+
+  th,
+  td {
+    padding: 1px;
+    vertical-align: top;
+    border-top: $table-border-width solid $primarycolor;
+  }
+}
+ 
