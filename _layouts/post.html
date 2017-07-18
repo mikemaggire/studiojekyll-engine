@@ -4,31 +4,113 @@ layout: default
 {% assign defaultcomments = true %}
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  {% include post-header.html %}
+    <!-- master head image and color--> 
+    {% if page.masthead-img %}
+    <div class="masthead-img" style="background-image: url('{{ site.basurl }}/assets/img/{{ page.masthead-img }}');">
+        <header class="masthead">
+    {% else %}
+        <header class="masthead" style="background-color: {{ page.masthead-color | default: 'white' }}">
+    {% endif %}
 
-  <hr >
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
-  <hr>
+            <!-- watermark : draft of future -->
+            {% if page.draft %}
+            <div class="stamp">
+                brouillon
+            </div>
+            {% else %}
+                {% if page.date > site.time %} 
+                <div class="stamp">
+                    publication future
+                </div>
+                {% endif %}
+            {% endif %}
 
-  <!-- Pager -->
-  <div class="pager">
-      {% if page.previous.url %}
-      <span class="previous">
-          <a href="{{ site.baseurl }}{{ page.previous.url }}">&larr; Article précédent</a>
-      </span>
-      {% endif %}
-      {% if page.next.url %}
-      <span class="next">
-          <a href="{{ site.baseurl }}{{ page.next.url }}">Article suivant &rarr;</a>
-      </span>
-      {% endif %}
-      {% if page.previous.url or page.next.url %}
-          <hr>
-      {% endif %}
-  </div>
+            <!-- header content -->
+            <div class="container">
 
-  {% include disqus_comments.html %}
+                <!-- title & subtitle -->
+                <h1 class="page-title">{{ page.title | escape }}</h1>
+                {% if page.subtitle %}
+                <div class="page-subtitle">
+                    {{ page.subtitle }}
+                </div>
+                {% endif %}
+
+                <!-- tags -->
+                <div class="page-tags">
+                    {% for tag in page.tags %}
+                        <span class="badge badge-default">
+                            <a href="{{ site.baseurl }}/tags.html#{{ tag | slugize }}">{{ tag }}</a>
+                        </span>
+                    {% endfor %}
+                </div>
+
+                <!-- page meta -->
+                <div class="page-meta">
+                    {% if page.issue_date %}Mis à jour{% else %}Publié{% endif %}
+                    {% if site.author.name %} par <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <span itemprop="name"><a href="{{ site.baseurl }}{{ site.author.url }}">{{ site.author.name }}</a></span>
+                        </span>
+                    {% endif %}
+                    {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+                    {% if page.issue_date %}
+                        <time class="post-date" datetime="{{ page.issue_date | date_to_xmlschema }}" itemprop="datePublished"></time>
+                        <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="dateModified">
+                            le {{ page.date | date: date_format }}
+                        </time>
+                    {% else %}
+                        {% if page.date %}
+                        <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                        le {{ page.date | date: date_format }}
+                        </time>
+                        {% endif %}
+                    {% endif %}
+                </div>
+
+            </div> <!-- container / header content -->
+        </header>
+
+    {% if page.masthead-img %}
+    </div> <!-- masthear-img -->
+    {% endif %}
+
+    <!-- content -->
+    <div class="container">
+
+        <div class="post-content" itemprop="articleBody">
+            {{ content }}
+        </div>
+
+        <div class="noprint">
+        <!-- share this buttons -->
+        <div class="pb-2">
+            {% if site.share_by_twitter == true %}
+                <a class="btn btn-primary btn-sm" href="https://twitter.com/intent/tweet?button_hashtag=studioJekyll&text={{page.title | escape }} {{ site.baseurl }}{{ page.url }}" role="button" data-network="twitter" title="Partager sur twitter"><span class="fa fa-twitter"></span> Twitter</a>
+            {% endif %}
+            {% if site.share_by_linkedin == true %}
+                <a class="btn btn-primary btn-sm" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.baseurl }}{{ page.url }}" role="button" data-network="linkedin" title="Partager sur linkedin"><span class="fa fa-linkedin"></span> Partager</a>
+            {% endif %}
+            {% if site.share_by_facebook == true %}
+                <a class="btn btn-primary btn-sm" href="https://www.facebook.com/sharer.php?u={{ site.baseurl }}{{ page.url }}" role="button" data-network="facebook" title="Partager sur facebook"><span class="fa fa-facebook"></span> Partager</a>
+            {% endif %}           
+        </div>
+
+        <!-- Pager -->
+        <hr>
+        <nav class="blog-pagination d-flex justify-content-between">
+            {% if page.previous.url %}
+                <a class="btn btn-outline-jekyll" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}" href="{{ site.baseurl }}{{ page.previous.url}}">&larr; Article précédent</a>
+            {% endif %}
+            {% if page.next.url %}
+                <a class="btn btn-outline-jekyll" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}" href="{{ site.baseurl }}{{ page.next.url }}">Article suivant &rarr;</a>
+            {% endif %}
+        </nav>
+
+        <!-- comments -->
+        {% include disqus_comments.html %}
+
+        </div> <!-- pager / noprint -->
+
+    </div> <!-- container / content -->
 
 </article>

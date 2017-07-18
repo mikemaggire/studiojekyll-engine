@@ -1,20 +1,20 @@
-# Readme Studio Jekyll Engine
+# Readme Studio Jekyll Starter
 
-Used as root to build new studiojekyll template.
+Ce repo contient les sources d'un site web **StudioJekyll** type, avec le design **starter**.
 
-## use
+Une démo est disponible ici : [studiojekyll-starter-demo](http://wiki.maggire.net/studiojekyll-starter-demo)
 
-Not to be used website as such. Fork studiojekyll template rather than the root unless you want to create your own template.
+## Utilisation
 
-More info on [Bloggez avec Studio Jekyll sous Windows](http://wiki.maggire.net/blogging-studio-jekyll) (in French)
+Forkez ce repo puis configurez votre site en suivant [le guide pour bloggez avec Studio Jekyll](http://wiki.maggire.net/blogging-studio-jekyll/guide-nouveau-site-studiojekyll.html)
 
-## Prerequisit
+## Prerequis
 
-- StudioJekyll environement installed on your PC under Windows. See [Bloggez avec Studio Jekyll sous Windows](http://wiki.maggire.net/blogging-studio-jekyll) (in French)
+- L'environnement StudioJekyll doit avoir été installé sur votre PC sous Windows 10. Les instructions se trouvent dans [le guide d'installation Studio Jekyll](http://wiki.maggire.net/blogging-studio-jekyll/guide-installation-studiojekyll.html)
 
 --------------
 
-## Author
+## Auteur
 
 @Mike-Maggire
 

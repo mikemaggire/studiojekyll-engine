@@ -5,8 +5,10 @@
 # URL absolue et relative de votre site sur le machine de **TEST**
 # Vous devez configurer ces valeurs
 ########################
-url: http://nestor
-baseurl: /acceptance/studiojekyll-minimax
+#url: http://nestor
+#baseurl: /acceptance/studiojekyll-starter
+url: http://xpslool:85
+baseurl: 
  
 
 ########################

@@ -3,20 +3,62 @@ layout: default
 ---
 {% assign defaultcomments = false %}
 <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-  
-  <header class="post-header">
-    <h1 class="page-title">{{ page.title | escape }}</h1>
-    <div class="post-meta">
-      <div class="tagline">
-      {% for tag in page.tags %}
-          • <a href="{{ site.baseurl }}/tags.html#{{ tag | slugize }}">{{ tag }}</a>
-      {% endfor %}
-      </div>
-    </div>
-  </header>
-      
-  {{ content }}
 
-  {% include disqus_comments.html %}
+    <!-- master head image and color--> 
+    {% if page.masthead-img %}
+    <div class="masthead-img" style="background-image: url('{{ site.basurl }}/assets/img/{{ page.masthead-img }}');">
+        <header class="masthead">
+    {% else %}
+        <header class="masthead" style="background-color: {{ page.masthead-color | default: 'white' }}">
+    {% endif %}
+
+          <!-- header content -->
+          <div class="container">
+
+            <!-- header content -->
+            <h1 class="page-title">{{ page.title | escape }}</h1>
+            {% if page.subtitle %}
+            <div class="page-subtitle">
+                {{ page.subtitle }}
+            </div>
+            {% endif %}
+          
+            <!-- tags -->
+            <div class="page-meta">
+            {% for tag in page.tags %}
+                <span class="badge badge-default">
+                    <a href="{{ site.baseurl }}/tags.html#{{ tag | slugize }}">{{ tag }}</a>
+                </span>
+            {% endfor %}
+            </div>
+          </div>
+        </header>
+
+    {% if page.masthead-img %}
+    </div> <!-- masthear-img -->
+    {% endif %}
+
+    <!-- content -->
+    <div class="container">
+        {{ content }}
+
+        <div class="noprint">     
+        <!-- share this buttons -->
+        <div class="pb-2">
+            {% if site.share_by_twitter == true %}
+                <a class="btn btn-primary btn-sm" href="https://twitter.com/intent/tweet?button_hashtag=studioJekyll&text={{page.title | escape }} {{ site.baseurl }}{{ page.url }}" role="button" data-network="twitter" title="Partager sur twitter"><span class="fa fa-twitter"></span> Twitter</a>
+            {% endif %}
+            {% if site.share_by_linkedin == true %}
+                <a class="btn btn-primary btn-sm" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.baseurl }}{{ page.url }}" role="button" data-network="linkedin" title="Partager sur linkedin"><span class="fa fa-linkedin"></span> Partager</a>
+            {% endif %}
+            {% if site.share_by_facebook == true %}
+                <a class="btn btn-primary btn-sm" href="https://www.facebook.com/sharer.php?u={{ site.baseurl }}{{ page.url }}" role="button" data-network="facebook" title="Partager sur facebook"><span class="fa fa-facebook"></span> Partager</a>
+            {% endif %}           
+        </div>
+
+        <!-- comments -->
+        {% include disqus_comments.html %}
+        </div> <!-- pager / noprint -->
+    </div>
 
 </article>
