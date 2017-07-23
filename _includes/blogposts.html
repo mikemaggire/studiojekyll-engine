@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="container">
 
     <!-- blog post preview,ic. meta -->
@@ -72,60 +71,3 @@
     {% endif %}
 
 </div>
-=======
-
-<!-- preview,ic. meta -->
-<div class="post-preview">
-{%- for post in paginator.posts -%}
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="page-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <div class="page-subtitle">
-            {{ post.subtitle }}
-        </div>
-        {% endif %}
-    </a>
-
-    <div class="page-meta">
-        {% if post.issue_date %}Mis à jour{% else %}Publié{% endif %}
-        {% if site.author.name %} par <a href="{{ site.baseurl }}{{ site.author.url }}">{{ site.author.name }}</a>{% endif %}
-
-        {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-        {% if post.issue_date %}
-            le {{ post.issue_date | date: date_format }}
-        {% else %}
-            {% if post.date %}
-                le {{ post.date | date: date_format }}
-            {% endif %}
-        {% endif %}
-
-        <!-- tags -->
-        {% for tag in post.tags %}
-            <span class="badge badge-default">
-                <a href="{{ site.baseurl }}/tags.html#{{ tag | slugize }}">{{ tag }}</a>
-            </span>
-        {% endfor %}
-    </div>
-    <hr>
-{%- endfor -%}
-</div>
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<nav class="blog-pagination d-flex justify-content-between">
-    {% if paginator.previous_page %}
-        {% if paginator.previous_page_path == '/' %}
-            <a class="btn btn-outline-jekyll" href="{{ site.baseurl }}/index.html">&larr; Article précédent</a>
-        {% else %}
-            <a class="btn btn-outline-jekyll" href="{{ site.baseurl }}{{ paginator.previous_page_path }}/index.html">&larr; Article précédent</a>
-        {% endif %}
-    {% endif %}
-    {% if paginator.next_page %}
-        <a class="btn btn-outline-jekyll" href="{{ site.baseurl }}{{ paginator.next_page_path }}/index.html">Article suivant &rarr;</a>
-    {% endif %}
-</nav>
-
-{% endif %}
->>>>>>> 0aba170... upgrade design woth bootstrap4
