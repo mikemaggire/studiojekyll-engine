@@ -162,9 +162,9 @@ a:hover, a:focus {
 
   .page-meta {
     font-size: 0.7rem;
-    color: grey;
+    /*color: grey;*/
     a { 
-      color:grey;
+      color: inherit;
       font-weight: bold; }
     }
 
