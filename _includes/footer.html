@@ -56,14 +56,7 @@
       <!-- version -->
       <div class="col text-nowrap">
         {%- assign env = jekyll.environment -%}
-        {%- if env == 'development' -%}
-          <small><strong>Version developpement</strong></small>
-        {%- else -%}
-          {%- if env != 'production' -%}
-            <small><strong>Version {{ env }} </strong></small>
-          {%- endif -%}
-        {%- endif -%}
-      
+        <small><strong>Version {{ env }} </strong></small>   
         {%- if site.version -%}
           {%- if env == blank or env == 'development' -%}basée sur {% endif %}
           <small>&#151 {{ site.version }}</small>
