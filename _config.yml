@@ -11,27 +11,27 @@
 # Sivous regardez dans vos fichiers HTML, vous verrez qu'ils y accedent
 # via {{ site.title }}, {{ site.email }}, et ainsi de suite.
 
-brand: Ma Marque
-title: Mon site web
+brand: StudioJekyll
+title: Demo StudioJekyll Starter
 tagline: Un site web qui déchire
 description: un peu de blabla pour aguicher l'internaute et pour améliorer le référencement
 
 copyright:
-  name: Mon copyright
+  name: Mike Maggire
 #  url: https://votre-domaine.com/auteur-copyright.html
   licence: Libre de droits sous license MIT
 
 author:
-  name: mon pseudo
+  name: Mike Maggire
   url: https://twitter.com/montwitterid
 
 # id utilisés pour faire apparaitre les boutons réseaux sociaux sur le site
-#email: votre-email@example.com
-#twitter_userid: mikemaggire
-#github_userid:  mikemaggire
-#gplus_userid: +mikemaggire
-#facebook_userid: mikemaggire
-#linkedin_userid: mikemaggire
+email: votre-email@example.com
+twitter_userid: mikemaggire
+github_userid:  mikemaggire
+gplus_userid: +mikemaggire
+facebook_userid: mikemaggire
+linkedin_userid: mikemaggire
 
 ############################################################ SHARE THIS
 share_by_twitter: true
@@ -51,9 +51,9 @@ share_by_facebook: true
 # puis ajoutez l'image dans le repertoire 'assets/img'
 
 graphicaltheme:
-#  primarycolor: $color-yellow
+  primarycolor: $color-maroon
 #  secondarycolor: $color-yellow
-#  backgroundtexture: crossword.png
+  backgroundtexture: crossword.png
 
 ############################################################ URL SITE
 # A noter que l'URL de votre site publié doit être configurer dans le fichier 
@@ -74,8 +74,8 @@ graphicaltheme:
 # en face de la variable 'shortname' ci-après.
 # Plus d'explications : http://wiki.maggire.net/blogging-studio-jekyll/2017/06/25/comment-activer-commentaires.html
 # Pour désactiver DISQUS, mettez les deux lignes suivantes en commentaire
-# disqus:
-#   shortname: blogging-studio-jekyll
+disqus:
+   shortname: studio-jekyll-starter
 
 ############################################################ ANALYTICS
 # Pour activer Google Analytics sur vos pages
@@ -90,7 +90,7 @@ graphicaltheme:
 showbloginnavbar: /index.html
 
 # nombre maximum d'articles sur la page de blog
-paginate: 7
+paginate: 5
 
 ############################################################
 # Les variables suivantes ne sont pas à modifier

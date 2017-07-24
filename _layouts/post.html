@@ -6,7 +6,7 @@ layout: default
 
     <!-- master head image and color--> 
     {% if page.masthead-img %}
-    <div class="masthead-img" style="background-image: url('{{ site.basurl }}/assets/img/{{ page.masthead-img }}');">
+    <div class="masthead-img" style="background-image: url('{{ site.basurl }}/assets/img/{{ page.masthead-img }}'); color:white;">
         <header class="masthead">
     {% else %}
         <header class="masthead" style="background-color: {{ page.masthead-color | default: 'white' }}">
