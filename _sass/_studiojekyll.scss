@@ -64,8 +64,8 @@ a:hover, a:focus {
  */
 
 .masthead {
-  padding-top: 2rem;
-  padding-bottom: 1.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   margin-bottom: 1rem;
   border-bottom: .05rem solid lightgrey;
   background-size: 100%;
@@ -86,8 +86,6 @@ a:hover, a:focus {
     width: 100%;
     height: 100%;
 }
-
-// TODO: images header seulement sur screen
 
 .page-title {
   margin-bottom: 0;
@@ -318,7 +316,7 @@ img {
   /* default is like img-fluid in bootstrap4 */
   max-width: 100%;
   height: auto;
-  margin-bottom: 0.5rem;
+/*  margin-bottom: 0.5rem;*/
 }
 
 .img-shadow {
