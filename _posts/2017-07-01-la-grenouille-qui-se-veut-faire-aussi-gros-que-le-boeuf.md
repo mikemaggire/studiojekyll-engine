@@ -2,6 +2,7 @@
 layout: post
 title: La grenouille qui se veut faire aussi gros que le boeuf
 subtitle: Le monde est plein de gens envieux.
+excerpt: Le monde est plein de gens envieux
 tags: fable
 masthead-img: fondfloral.jpg
 ---
