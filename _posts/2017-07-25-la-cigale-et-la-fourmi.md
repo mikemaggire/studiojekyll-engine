@@ -3,6 +3,7 @@ layout: post
 title: La cigale et la fourmi
 tags: fable
 masthead-img: fondfloral.jpg
+issue_date: 2017-07-01
 ---
 
 > La Cigale, ayant chanté tout l'été, se trouva fort dépourvue quand la bise fut venue.  
