@@ -2,7 +2,7 @@
         "//": "scripts js à lancer avec la commande 'npm run ...' ou via le 'task runner' de VScode pour automatiser les build et les deploiements",
         "name": "automation-studiojekyll",
         "title": "Automation Studiojekyll",
-        "version": "1.9.0",
+        "version": "1.10.0",
         "authors": "mike.maggire",
         "scripts": {
                 "clean:jekyll": "jekyll clean && rimraf _site_ready2deploy",
