@@ -99,7 +99,7 @@ paginate: 7
 # encoding & format
 # se référer à http://shopify.github.io/liquid/filters/date/ pour personnaliser le format de date
 encoding: utf-8
-lang: fr
+lang: fr-FR
 date_format: "%d/%m/%Y"
 timezone: Europe/Paris
 markdown: kramdown
