@@ -4,39 +4,8 @@ layout: default
 {% assign defaultcomments = false %}
 <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
 
-    <!-- master head image and color--> 
-    {% if page.masthead-img %}
-    <div class="masthead-img" style="background-image: url('{{ site.baseurl }}/assets/img/{{ page.masthead-img }}');">
-        <header class="masthead">
-    {% else %}
-        <header class="masthead" style="background-color: {{ page.masthead-color | default: 'white' }}">
-    {% endif %}
-
-          <!-- header content -->
-          <div class="container">
-
-            <!-- header content -->
-            <h1 class="page-title">{{ page.title | escape }}</h1>
-            {% if page.subtitle %}
-            <div class="page-subtitle">
-                {{ page.subtitle }}
-            </div>
-            {% endif %}
-          
-            <!-- tags -->
-            <div class="page-meta">
-            {% for tag in page.tags %}
-                <span class="badge badge-default">
-                    <a href="{{ site.baseurl }}/tags.html#{{ tag | slugize }}">{{ tag }}</a>
-                </span>
-            {% endfor %}
-            </div>
-          </div>
-        </header>
-
-    {% if page.masthead-img %}
-    </div> <!-- masthear-img -->
-    {% endif %}
+    <!-- default master head -->
+    {% include masthead.html %}
 
     <!-- content -->
     <div class="container">
