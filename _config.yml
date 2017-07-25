@@ -75,7 +75,7 @@ graphicaltheme:
 # Plus d'explications : http://wiki.maggire.net/blogging-studio-jekyll/2017/06/25/comment-activer-commentaires.html
 # Pour désactiver DISQUS, mettez les deux lignes suivantes en commentaire
 disqus:
-   shortname: studio-jekyll-starter
+   shortname: studiojekyll-starter
 
 ############################################################ ANALYTICS
 # Pour activer Google Analytics sur vos pages
