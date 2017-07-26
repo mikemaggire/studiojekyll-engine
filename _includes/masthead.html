@@ -41,7 +41,7 @@
                 </div>
 
                 <!-- page meta -->
-                {% if page.date %}
+                {% if page.layout == "post" %}
                 <div class="page-meta">
                     {% if page.issue_date %}Mis à jour{% else %}Publié{% endif %}
                     {% if site.author.name %} par <span itemprop="author" itemscope itemtype="http://schema.org/Person">
