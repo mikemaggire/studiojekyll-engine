@@ -75,6 +75,7 @@ a:hover, a:focus {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  color: $color-silver;
 }
 
 .masthead-img::before {
@@ -188,13 +189,35 @@ a:hover, a:focus {
 /*
  * jekyll button
  */
+.btn-primary-jekyll {
+    border-color: white;
+    color: white;
+    background-color: $primarycolor;
+}
+
+.btn-primary-jekyll:hover, .btn-primary-jekyll:focus {
+    color: white;
+    background-color: $secondarycolor;
+}
+
+.btn-secondary-jekyll {
+    border-color: $primarycolor;
+    color: white;
+    background-color: $secondarycolor;
+}
+
+.btn-secondary-jekyll:hover, .btn-secondary-jekyll:focus {
+    color: white;
+    background-color: $primarycolor;
+}
+
 .btn-outline-jekyll {
     border-color: $primarycolor;
     color: $primarycolor;
     background-color: white;
 }
 
-.btn-outline-jekyll:hover {
+.btn-outline-jekyll:hover, .btn-outline-jekyll:focus {
       color:white;
       background-color: $primarycolor;
 }
@@ -348,3 +371,9 @@ table {
     border-top: $table-border-width solid $primarycolor;
   }
 }
+
+/*
+ * Customized section
+ *
+ */
+ 

@@ -1,9 +1,9 @@
     <!-- master head image and color--> 
     {% if page.masthead-img %}
-    <div class="masthead-img" style="background-image: url('{{ site.baseurl }}/assets/img/{{ page.masthead-img }}'); color:white;">
+    <div class="masthead-img" style="background-image: url('{{ site.baseurl }}/assets/img/{{ page.masthead-img }}');">
         <header class="masthead">
     {% else %}
-        <header class="masthead" style="background-color: {{ page.masthead-color | default: 'white' }}">
+        <header class="masthead" style="background-color: {{ page.masthead-bgcolor | site.masthead-bgcolor | default: 'white' }};">
     {% endif %}
 
             <!-- watermark : draft of future -->

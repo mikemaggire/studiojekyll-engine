@@ -54,6 +54,7 @@ graphicaltheme:
   primarycolor: $color-maroon
 #  secondarycolor: $color-yellow
   backgroundtexture: crossword.png
+#masthead-bgcolor: 'white'
 
 ############################################################ URL SITE
 # A noter que l'URL de votre site publié doit être configurer dans le fichier 
